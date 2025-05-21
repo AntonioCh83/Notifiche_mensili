@@ -1,0 +1,6 @@
+# Esempio di .gitignore per progetti Node.js
+node_modules/
+.env
+.DS_Store
+dist/
+ProvaNotifiche.xlsx
