@@ -247,7 +247,7 @@ async function inviaNotificheMensili() {
       }
       
       // Piccola pausa tra gli invii per evitare rate limiting
-      await new Promise(resolve => setTimeout(resolve, 300000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (error) {
       logger.error(`Errore nel processare l'utente ${nome}:`, error);
       errori++;
@@ -276,7 +276,7 @@ function avviaProgramma() {
   cron.schedule('0 9 1 * *', inviaNotificheMensili);
   
   // Opzionale: esegui immediatamente per test (commentare in produzione)
-  setTimeout(inviaNotificheMensili, 30000);
+  setTimeout(inviaNotificheMensili, 5000);
   
   logger.info('Programmazione completata. In attesa del prossimo invio mensile...');
 }
